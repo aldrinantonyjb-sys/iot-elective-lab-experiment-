@@ -53,5 +53,6 @@ void loop() {
 3. Open Arduino IDE, select the correct board and port.
 4. Upload the code.
 5. Press and hold the push-button and observe the LED. Release and observe.
+<img width="953" height="797" alt="image (5)" src="https://github.com/user-attachments/assets/50e3e16e-22a3-453a-9f44-bef8f279bc5e" />
 
 **Result:** The LED turns ON when the push-button is pressed and turns OFF when released, confirming successful GPIO digital input reading and output control on the ESP32.
