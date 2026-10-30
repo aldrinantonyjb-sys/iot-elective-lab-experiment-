@@ -1,29 +1,36 @@
-Aim: To interface a 16×2 LCD display (I2C) with ESP32 and display text messages on both lines.
+**Aim:** To interface a 16×2 LCD display (I2C) with ESP32 and display text messages on both lines.
 
-Components Required:
+**Components Required:**
 
-Component	Quantity
-ESP32 Development Board	1
-16×2 LCD with I2C Module	1
-Breadboard	1
-Jumper Wires	4
-USB Cable	1
-Circuit Connections:
+| Component | Quantity |
+|-----------|----------|
+| ESP32 Development Board | 1 |
+| 16×2 LCD with I2C Module | 1 |
+| Breadboard | 1 |
+| Jumper Wires | 4 |
+| USB Cable | 1 |
 
-ESP32 Pin	I2C LCD Pin
-3.3V / 5V	VCC
-GND	GND
-GPIO21 (SDA)	SDA
-GPIO22 (SCL)	SCL
+**Circuit Connections:**
+
+| ESP32 Pin | I2C LCD Pin |
+|-----------|-------------|
+| 3.3V / 5V | VCC |
+| GND | GND |
+| GPIO21 (SDA) | SDA |
+| GPIO22 (SCL) | SCL |
+
+```
 ESP32          I2C LCD Module
 3.3V  ─────── VCC
 GND   ─────── GND
 GPIO21 ─────── SDA
 GPIO22 ─────── SCL
-Library Required: LiquidCrystal_I2C (Install via Arduino IDE → Library Manager)
+```
 
-Code:
+**Library Required:** `LiquidCrystal_I2C` (Install via Arduino IDE → Library Manager)
 
+**Code:**
+```cpp
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
 
@@ -47,13 +54,15 @@ void loop() {
   counter++;
   delay(1000);
 }
-Procedure:
+```
 
-Connect the I2C LCD module to ESP32 as per the circuit (SDA → GPIO21, SCL → GPIO22).
-Open Arduino IDE, install the LiquidCrystal_I2C library.
-Upload the code and observe the LCD display.
-Line 1 should show "JECC IoT Lab" and Line 2 should show a live count incrementing every second.
-If the display does not show text, adjust the contrast potentiometer on the I2C module.
-<img width="960" height="780" alt="image (1)" src="https://github.com/user-attachments/assets/3e5048ef-cf65-4b7d-9079-0381584d7fdd" />
+**Procedure:**
+1. Connect the I2C LCD module to ESP32 as per the circuit (SDA → GPIO21, SCL → GPIO22).
+2. Open Arduino IDE, install the `LiquidCrystal_I2C` library.
+3. Upload the code and observe the LCD display.
+4. Line 1 should show **"JECC IoT Lab"** and Line 2 should show a live count incrementing every second.
+5. If the display does not show text, adjust the contrast potentiometer on the I2C module.
+<img width="960" height="780" alt="image (1)" src="https://github.com/user-attachments/assets/0cf218da-00eb-46bf-9979-391bbb12d737" />
 
-Result: The 16×2 LCD displays "JECC IoT Lab" on Line 1 and a live incrementing counter on Line 2, confirming successful I2C communication between ESP32 and the LCD module.
+
+**Result:** The 16×2 LCD displays "JECC IoT Lab" on Line 1 and a live incrementing counter on Line 2, confirming successful I2C communication between ESP32 and the LCD module.
